@@ -13,14 +13,31 @@ public class sample {
 	public static void sample() {
 		Integer a = 10;
 		System.out.println(a);
-	}
+	} 
 	
 	public static void main(String[] args) {
 		
+		Specification specification = new Specification();
+//		specification.setId(1);
+//		specification.setName("mobile");
+//		specification.setType("Eloectronics");
+//		specification.setLifetime("10Yearss");
+//		specification.setNew(true);
+		
+		System.out.println(specification.getName());
+		System.out.println(specification);
+		DetailsImpl detailsImpl = new DetailsImpl();
+		detailsImpl.productinCart();
+		Details.insertDetail();
+		
+		
+		AbstractImp abstractImp = new AbstractImp();
+//		String output = abstractImp.testingMethod();
+//		System.out.println(output);
+		System.out.println(abstractImp.testingMethod());
 		sample();
 		int a = 10;
-		String sample = "data";
-	
+		String sample = "data"; 
 		System.out.println(a);
 		int[] num = {10,12,13,14};
 		int [] num2 = {1,2,3,4};
@@ -33,6 +50,8 @@ public class sample {
 		}
 		UserDetails user = new UserDetails(1, "v", "User", "dev", "600119", "chn", "12334");
 		List <Users> details = new ArrayList<Users>();
+		List <String> details3 = new ArrayList<String>();
+		details3.add("sample");
 		Users userNew = new Users();
 		userNew.setProduct("CPU");
 		userNew.setPrice("30000");
@@ -49,6 +68,7 @@ public class sample {
 		}
 //		details.remove(0);
 		Set<Integer> sampleSet = new HashSet<Integer>(); 
+		Set<String> sampleset2 = new HashSet<String>();
 		sampleSet.add(10);
 		sampleSet.add(10);
 		sampleSet.add(20);
