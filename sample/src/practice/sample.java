@@ -1,5 +1,6 @@
 package practice;
 
+import java.net.Authenticator.RequestorType;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -109,6 +110,42 @@ public class sample {
 		Set<Integer> dataN = practice.deletingData(60, 70);
 		System.out.println(dataN);
 		UserPractice.addingData();
+		
+		SampleJson jsonSample = new SampleJson();
+		RequetedRole requetedRole = new RequetedRole();
+		requetedRole.setRole("Tester");
+		requetedRole.setRoleDescription("testing");
+		requetedRole.setRoleID(10);
+		requetedRole.setRoleSource("test");
+		List<Mfls> mflsnew = new ArrayList<Mfls>();
+
+		Mfls mfls = new Mfls();
+		mfls.setDesc("testing");
+		mfls.setValue("test");
+		
+		EffinTimestamp effinTimestamp = new EffinTimestamp();
+		effinTimestamp.setDate("16-sep-2025");
+		mfls.setEffinTimestamp(effinTimestamp);
+		
+		Mfls mfls1 = new Mfls();
+		mfls.setDesc("testing2");
+		mfls.setValue("test2");
+		
+		EffinTimestamp effinTimestamp2 = new EffinTimestamp();
+		effinTimestamp.setDate("16-sep-2025");
+		mfls1.setEffinTimestamp(effinTimestamp2);
+		
+		mflsnew.add(mfls);
+		mflsnew.add(mfls1);
+		
+		jsonSample.setId(1);
+		jsonSample.setMfls(mflsnew);
+		jsonSample.setProvisioned(true);
+		jsonSample.setVin("egfdfa");
+		jsonSample.setRequetedRole(requetedRole);
+		jsonSample.setCreatedUser("vignesh");
+		
+		System.out.println(jsonSample);
 	}
 
 }
