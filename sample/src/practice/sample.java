@@ -16,7 +16,35 @@ public class sample {
 		System.out.println(a);
 	} 
 	
-	public static void main(String[] args) {
+	public static void ExcpetionEx(int a) throws ExceptionAnalysis {
+		try {
+			if(a>10) {
+				throw new ExceptionAnalysis("values are good");
+			}else {
+				throw new ExceptionAnalysis("Not Applicable");
+			}
+			
+			
+		}catch (Exception e) {
+			throw new ExceptionAnalysis("Resource Not Found While trying the test"+ e);
+			
+		}
+	}
+	
+	public static void ExcpetionNull(SampleJson a) throws ExceptionAnalysis {
+		try {
+			a.getVin();
+			
+		}catch (Exception e) {
+			throw new ExceptionAnalysis("Resource Not Found While trying the test"+ e);
+//			e.printStackTrace();
+			
+		}
+	}
+	
+	public static void main(String[] args) throws ExceptionAnalysis {
+		
+//		ExcpetionEx(1);
 		
 		Specification specification = new Specification();
 //		specification.setId(1);
@@ -141,11 +169,13 @@ public class sample {
 		jsonSample.setId(1);
 		jsonSample.setMfls(mflsnew);
 		jsonSample.setProvisioned(true);
-		jsonSample.setVin("egfdfa");
+		jsonSample.setVin(null);
 		jsonSample.setRequetedRole(requetedRole);
 		jsonSample.setCreatedUser("vignesh");
 		
+		SampleJson jsonval = null;
 		System.out.println(jsonSample);
+		ExcpetionNull(jsonval);
 	}
 
 }
