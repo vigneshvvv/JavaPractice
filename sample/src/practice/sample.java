@@ -16,6 +16,14 @@ public class sample {
 		System.out.println(a);
 	} 
 	
+	public static void exceptionSample(SampleJson jsonval) throws ExceptionAnalysis {
+		try {
+			ExcpetionNull(jsonval);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void ExcpetionEx(int a) throws ExceptionAnalysis {
 		try {
 			if(a>10) {
@@ -31,10 +39,29 @@ public class sample {
 		}
 	}
 	
+	public static SampleJson analyzeSample(SampleJson sample) {
+		if(sample.getRequetedRole().getRoleDescription() == "testing") {
+//		 RequetedRole requetedRole = new RequetedRole();
+//		 requetedRole.setRole(sample.getRequetedRole().getRole());
+//		 requetedRole.setRoleDescription("Manual Testing");
+//		 requetedRole.setRoleID(sample.getRequetedRole().getRoleID());
+//		 requetedRole.setRoleSource(sample.getRequetedRole().getRoleSource());
+		 
+//		 sample.setRequetedRole(requetedRole);
+			sample.getRequetedRole().setRoleDescription("ManualTesting");
+		 return sample;
+		}else {
+			return sample;
+		}
+	}
+	
 	public static void ExcpetionNull(SampleJson a) throws ExceptionAnalysis {
 		try {
+			if(a != null) {
 			a.getVin();
-			
+			}else {
+				throw new ExceptionAnalysis("Resource Not Found While trying the test");
+			}
 		}catch (Exception e) {
 			throw new ExceptionAnalysis("Resource Not Found While trying the test"+ e);
 //			e.printStackTrace();
@@ -127,6 +154,8 @@ public class sample {
 		
 		user.setName("vignesh");
 		
+		String user5  = ""; 
+		
 		Set<Integer> treeEx = new TreeSet<Integer>();
 		treeEx.add(20);
 		treeEx.add(10);
@@ -173,9 +202,11 @@ public class sample {
 		jsonSample.setRequetedRole(requetedRole);
 		jsonSample.setCreatedUser("vignesh");
 		
-		SampleJson jsonval = null;
-		System.out.println(jsonSample);
-		ExcpetionNull(jsonval);
+//		SampleJson jsonval = null;
+//		System.out.println(jsonSample);
+//		exceptionSample(jsonval);
+		SampleJson sampleNew = analyzeSample(jsonSample);
+		System.out.println(sampleNew);
 	}
 
 }
