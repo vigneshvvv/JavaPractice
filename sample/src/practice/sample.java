@@ -16,6 +16,14 @@ public class sample {
 		System.out.println(a);
 	} 
 	
+	public static void sampleNew(int a) {
+		System.out.println(a);
+	}
+	
+public static void sampleNew(int a, int b ) {
+		System.out.println(a+b);
+	}
+	
 	public static void exceptionSample(SampleJson jsonval) throws ExceptionAnalysis {
 		try {
 			ExcpetionNull(jsonval);
@@ -67,6 +75,13 @@ public class sample {
 //			e.printStackTrace();
 			
 		}
+	}
+	
+	public static ProductDetails constructorOverloading() {
+		ProductDetails details = new ProductDetails();
+		ProductDetails details2 = new ProductDetails(1);
+		ProductDetails details3 = new ProductDetails(1, "Charger");
+		return details3;
 	}
 	
 	public static void main(String[] args) throws ExceptionAnalysis {
@@ -207,6 +222,17 @@ public class sample {
 //		exceptionSample(jsonval);
 		SampleJson sampleNew = analyzeSample(jsonSample);
 		System.out.println(sampleNew);
+		UserData data = new UserData(1, "vignesh");
+		UserData data1= new UserData();
+		
+		ProductDetails detailsSample = constructorOverloading();
+		System.out.println(detailsSample);
+		
+		System.out.println(constructorOverloading());
+		
+		sampleNew(10, 20);
+		sampleNew(10);
+		
 	}
 
 }
