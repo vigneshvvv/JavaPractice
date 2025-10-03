@@ -2,14 +2,16 @@ package stream;
 
 public class UserData {
 	
-
+	Integer id;
 
 	String userName;
 	String lastName;
 	String Experience;
 	String role;
 	String mobileNo;
-	
+	Details details;
+	UserStatus status;
+
 	public Integer getId() {
 		return id;
 	}
@@ -46,12 +48,25 @@ public class UserData {
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-	
-	Integer id;
+	public Details getDetails() {
+		return details;
+	}
+	public void setDetails(Details details) {
+		this.details = details;
+	}
+	public UserStatus getStatus() {
+		return status;
+	}
+	public void setStatus(UserStatus status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
 		return "UserData [id=" + id + ", userName=" + userName + ", lastName=" + lastName + ", Experience=" + Experience
-				+ ", role=" + role + ", mobileNo=" + mobileNo + "]";
+				+ ", role=" + role + ", mobileNo=" + mobileNo + ", details=" + details + ", status=" + status + "]";
 	}
+	
+
 
 }
